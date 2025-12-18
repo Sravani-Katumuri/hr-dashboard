@@ -7,6 +7,15 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
+canvas {
+  width: 100% !important;
+}
+.chart-wrapper {
+  height: 260px;   
+  width: 100%;
+}
+
+
 
   .chart-placeholder {
     height: 250px;

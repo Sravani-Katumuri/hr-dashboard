@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Chart } from 'chart.js/auto';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit,AfterViewInit {
 
   constructor() { }
 
@@ -30,6 +32,37 @@ export class DashboardComponent implements OnInit {
     { name: 'Ananya Rao', role: 'HR Manager', department: 'HR', status: 'Active' },
     { name: 'Rahul Singh', role: 'QA Engineer', department: 'Quality', status: 'Inactive' }
   ];
+  ngAfterViewInit(): void {
+    new Chart('performanceChart', {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [
+          {
+            label: 'Employee Performance',
+            data: [65, 72, 80, 75, 90],
+            backgroundColor: '#0d6efd'
+          }
+        ]
+      },
+      options: {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: true
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  }
+
+      }
+    });
+  }
+
 
 
 }
