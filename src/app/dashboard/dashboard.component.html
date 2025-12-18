@@ -1,0 +1,77 @@
+<div class="dashboard">
+
+  <!-- Summary Cards -->
+  <div class="row g-4 mb-4">
+    <div class="col-xl-3 col-md-6" *ngFor="let stat of stats">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h6 class="text-muted">{{ stat.label }}</h6>
+          <h3 class="fw-bold">{{ stat.value }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart + Recent Activity -->
+  <div class="row g-4 mb-4">
+    <div class="col-lg-8">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="mb-3">Performance Overview</h5>
+          <div class="chart-placeholder">
+            📊 Performance Chart
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="mb-3">Recent Activity</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let activity of activities">
+              {{ activity }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="mb-3">Employees</h5>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Department</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emp of employees">
+              <td>{{ emp.name }}</td>
+              <td>{{ emp.role }}</td>
+              <td>{{ emp.department }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [ngClass]="emp.status === 'Active' ? 'bg-success' : 'bg-secondary'"
+                >
+                  {{ emp.status }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+

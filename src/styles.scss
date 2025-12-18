@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column; 
+  }
+
+  .content {
+    width: 100%;
+  }
+}

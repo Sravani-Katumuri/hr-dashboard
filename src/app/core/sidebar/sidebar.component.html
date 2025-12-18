@@ -1,0 +1,43 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">    <!--aside(html tag for sidebar),class(base styling for sidebar),[class.collapsed](binding to apply 'collapsed' class based on isCollapsed variable(enables collapse or expand behaviour)) -->
+
+  <!-- Logo & Toggle -->
+  <div class="sidebar-header d-flex align-items-center justify-content-between">    <!-- d-flex(flexbox layout), align-items-center(vertical centering), justify-content-between(space between items) -->
+    <h5 class="logo" *ngIf="!isCollapsed">HR Dashboard</h5>                    <!-- Logo text, *ngIf(condition to show logo only when sidebar is not collapsed means expanded) -->
+    <button class="btn btn-sm btn-outline-light" (click)="toggleSidebar()">       <!-- Toggle button, btn(base button styling), btn-sm(small size), btn-outline-light(light outline style(on hover it usually fills color)), (click)(event binding to call toggleSidebar method on click) -->
+      ☰
+    </button>
+  </div>
+
+  <!-- Navigation -->
+  <ul class="nav flex-column mt-4">                     <!-- Navigation list, nav(base nav styling), flex-column(vertical layout), mt-4(margin top spacing) -->
+    <li class="nav-item">                                 
+      <a class="nav-link active">                          <!-- Active link styling (highlights the current page) -->
+        <span>🏠</span>
+        <span *ngIf="!isCollapsed">Dashboard</span>                  <!-- Dashboard link, *ngIf(condition to show text only when sidebar is not collapsed) -->
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link">
+        <span>👥</span>
+        <span *ngIf="!isCollapsed">Employees</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link">
+        <span>📊</span>
+        <span *ngIf="!isCollapsed">Reports</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link">
+        <span>⚙️</span>
+        <span *ngIf="!isCollapsed">Settings</span>
+      </a>
+    </li>
+  </ul>
+
+</aside>
+

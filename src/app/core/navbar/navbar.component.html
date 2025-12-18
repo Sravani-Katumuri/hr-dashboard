@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-white px-4 shadow-sm">                     <!-- Navbar container, navbar(base navbar styling), navbar-light bg-white(light theme with white background), px-4(horizontal padding), shadow-sm(subtle shadow effect,visual separation) -->
+    <button                                                                    
+  class="btn btn-outline-secondary d-md-none me-3"
+  (click)="menuClick.emit()"
+>
+  ☰
+ </button>                      <!-- Menu toggle button for mobile, btn(base button styling), btn-outline-secondary(secondary outline style), d-md-none(hidden on medium and larger screens), me-3(margin end spacing)                                          -->
+
+  <!-- Left: Search -->
+  <form class="d-none d-md-flex align-items-center w-50">                      <!-- Search form, d-none(hidden on small screens), d-md-flex(flexbox layout on medium and larger screens), align-items-center(vertical centering), w-50(50% width) -->
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search employees, departments..."
+    />
+  </form>
+
+  <!-- Right: Icons & User -->
+  <div class="d-flex align-items-center gap-4">                   <!-- Right section container, d-flex(flexbox layout), align-items-center(vertical centering), gap-4(spacing between items) -->
+
+    <!-- Notifications -->
+    <div class="position-relative notification-icon">                                    <!-- Notification icon container, position-relative(to position badge absolutely within) -->
+      <span class="fs-5">🔔</span>
+      <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">                                     <!-- Notification badge, badge(base badge styling), bg-danger(red background), position-absolute(absolute positioning within relative parent), top-0(start at top), start-100(position at end of parent), translate-middle(center the badge) -->
+        3
+      </span>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="dropdown">
+      <button
+        class="btn btn-light dropdown-toggle"
+        data-bs-toggle="dropdown"
+      >
+        Sravani
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item">Profile</a></li>
+        <li><a class="dropdown-item">Settings</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item text-danger">Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+
